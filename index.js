@@ -8,7 +8,6 @@ function initialize() {
     google.maps.event.addListener(map, 'idle', function(){
       var tim_start = Date.now();
       var bounds = map.getBounds();
-      var tim_end = Date.now();
 
       var minLat = bounds.getSouthWest().lat();
       var maxLat = bounds.getNorthEast().lat();
@@ -16,10 +15,10 @@ function initialize() {
       var maxLon = bounds.getSouthWest().lat();
       
       portal = portals.filter(function(portal){
-        console.log(minLat);
         return portal.area=="横浜市西区";
       });
       
+      var tim_end = Date.now();
       console.log("Portals: " + portal.length + ", Time: " + tim_end-tim_start + "ms");
     });
 }
