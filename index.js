@@ -11,8 +11,8 @@ function initialize() {
 
       var minLat = bounds.getSouthWest().lat();
       var maxLat = bounds.getNorthEast().lat();
-      var minLon = bounds.getNorthEast().lng();
-      var maxLon = bounds.getSouthWest().lng();
+      var minLon = bounds.getSouthWest().lng();
+      var maxLon = bounds.getNorthEast().lng();
 
       
       console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
