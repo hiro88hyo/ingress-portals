@@ -22,6 +22,7 @@ function initialize() {
         marker.setMap(null);
       });
       markers = [];
+      
 
       var filterd_portals = portals.filter(function(portal){
         return (portal.lat >= minLat && portal.lat <= maxLat
