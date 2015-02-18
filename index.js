@@ -31,7 +31,7 @@ function initialize() {
       strokeOpacity: 0.8 };
 
       filterd_portals.forEach(function(portal){
-        var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: googleMap, title: portal.name, icon: iconOpt, zIndex: 10 });
+        var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
       });
       
       var tim_end = Date.now();
