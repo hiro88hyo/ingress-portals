@@ -11,8 +11,10 @@ function initialize() {
 
       var minLat = bounds.getSouthWest().lat();
       var maxLat = bounds.getNorthEast().lat();
-      var minLon = bounds.getNorthEast().lon();
-      var maxLon = bounds.getSouthWest().lon();
+      var minLon = bounds.getNorthEast().lng();
+      var maxLon = bounds.getSouthWest().lng();
+
+      
       
       portal = portals.filter(function(portal){
         return (minLat >= portal.lat && portal.lat <= maxLat
