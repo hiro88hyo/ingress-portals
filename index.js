@@ -20,6 +20,19 @@ function initialize() {
         return (portal.lat >= minLat && portal.lat <= maxLat
                 && portal.lon >= minLon && portal.lon <= maxLon);
       });
+
+      var iconOpt = {
+      path: google.maps.SymbolPath.CIRCLE,
+      scale: 10,
+      fillColor: '#3679B9',
+      fillOpacity: 0.4,
+      strokeColor: '#3679B9',
+      strokeWeight: 2,
+      strokeOpacity: 0.8 };
+
+      filterd_portals.forEach(function(portal){
+        var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: googleMap, title: portal.name, icon: iconOpt, zIndex: 10 });
+      });
       
       var tim_end = Date.now();
       console.log("Portals: " + filterd_portals.length + ", Time: " + (tim_end-tim_start) + "ms");
