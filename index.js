@@ -18,7 +18,7 @@ function initialize() {
       
       console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
 
-      markers.foreach(function(marker){
+      markers.forEach(function(marker){
         marker.setMap(null);
       });
       markers = [];
