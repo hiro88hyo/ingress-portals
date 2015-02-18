@@ -19,6 +19,6 @@ function initialize() {
         return portal.area=="横浜市西区";
       });
       
-      console.log("Portals: " + portal + ", Time: " + (tim_end-tim_start)/1000 + "ms");
+      console.log("Portals: " + portal.length + ", Time: " + (tim_end-tim_start)/1000 + "ms");
     });
 }
