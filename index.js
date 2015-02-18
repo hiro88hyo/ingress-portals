@@ -15,7 +15,8 @@ function initialize() {
       var maxLon = bounds.getSouthWest().lat();
       
       portal = portals.filter(function(portal){
-        return portal.area=="横浜市西区";
+        return (minLat >= portal.lat && portal.lat <= maxLat
+                && minLon >= portal.lon && portal.lon <= maxLon);
       });
       
       var tim_end = Date.now();
