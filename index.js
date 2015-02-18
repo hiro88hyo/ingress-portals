@@ -7,7 +7,8 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
   google.maps.event.addListener(map, 'idle', function() {
     var bounds = map.getBounds();
-      console.log(bounds.getNorthEast().lat);
+      var pos = "minLat:" + bounds.getSouthWest().lat());
+      console.log(pos);
       //bounds.getSouthWest();
   });
 }
