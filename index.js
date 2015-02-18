@@ -17,8 +17,8 @@ function initialize() {
       
       console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
       var filterd_portals = portals.filter(function(portal){
-        return (minLat >= portal.lat && portal.lat <= maxLat
-                && minLon >= portal.lon && portal.lon <= maxLon);
+        return (portal.lat >= minLat && portal.lat <= maxLat
+                && portal.lon >= minLon && portal.lon <= maxLon);
       });
       
       var tim_end = Date.now();
