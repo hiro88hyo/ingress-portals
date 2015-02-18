@@ -12,5 +12,5 @@ function filterPortals(){
   var tim_start = Data.now();
   var bounds = map.getBounds();
   var tim_end = Date.now();
-  console.log("Time: " + (tim_end-tim_start)/1000 + "ms";
+  console.log("Time: " + (tim_end-tim_start)/1000 + "ms");
 }
