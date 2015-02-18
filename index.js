@@ -10,7 +10,14 @@ function initialize() {
       var bounds = map.getBounds();
       var tim_end = Date.now();
 
-      portal = portals.length;
+      var minLat = bounds.getSouthWest().lat();
+      var maxLat = bounds.getNorthEast().lat();
+      var minLon = bounds.getNorthEast().lat();
+      var maxLon = bounds.getSouthWest().lat();
+      
+      portal = portals.filter(function(portal){
+        return portal.area=="横浜市西区";
+      });
       
       console.log("Portals: " + portal + ", Time: " + (tim_end-tim_start)/1000 + "ms");
     });
