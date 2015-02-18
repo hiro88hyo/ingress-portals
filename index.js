@@ -15,7 +15,7 @@ function initialize() {
       var maxLon = bounds.getSouthWest().lng();
 
       
-      
+      console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
       portal = portals.filter(function(portal){
         return (minLat >= portal.lat && portal.lat <= maxLat
                 && minLon >= portal.lon && portal.lon <= maxLon);
