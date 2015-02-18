@@ -4,6 +4,7 @@ function initialize() {
     zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+  var markers = [];
   var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
     google.maps.event.addListener(map, 'idle', function(){
       var tim_start = Date.now();
@@ -16,6 +17,12 @@ function initialize() {
 
       
       console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
+
+      markers.foreach(function(marker){
+        marker.setMap(null);
+      });
+      markers = [];
+
       var filterd_portals = portals.filter(function(portal){
         return (portal.lat >= minLat && portal.lat <= maxLat
                 && portal.lon >= minLon && portal.lon <= maxLon);
@@ -32,6 +39,7 @@ function initialize() {
 
       filterd_portals.forEach(function(portal){
         var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
+        markers.push(marker);
       });
       
       var tim_end = Date.now();
