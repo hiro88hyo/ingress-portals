@@ -9,6 +9,9 @@ function initialize() {
       var tim_start = Date.now();
       var bounds = map.getBounds();
       var tim_end = Date.now();
-      console.log("Time: " + (tim_end-tim_start)/1000 + "ms");
+
+      portal = portals.length;
+      
+      console.log("Portals: " + portal + ", Time: " + (tim_end-tim_start)/1000 + "ms");
     });
 }
