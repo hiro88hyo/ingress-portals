@@ -16,12 +16,12 @@ function initialize() {
 
       
       console.log("Lat: [" + minLat +" to " + maxLat +"], Lng: [" + minLon +" to " + maxLon +"]");
-      portal = portals.filter(function(portal){
+      var filterd_portals = portals.filter(function(portal){
         return (minLat >= portal.lat && portal.lat <= maxLat
                 && minLon >= portal.lon && portal.lon <= maxLon);
       });
       
       var tim_end = Date.now();
-      console.log("Portals: " + portal.length + ", Time: " + (tim_end-tim_start) + "ms");
+      console.log("Portals: " + filterd_portals.length + ", Time: " + (tim_end-tim_start) + "ms");
     });
 }
