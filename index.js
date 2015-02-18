@@ -19,6 +19,6 @@ function initialize() {
       });
       
       var tim_end = Date.now();
-      console.log("Portals: " + portal.length + ", Time: " + tim_end-tim_start + "ms");
+      console.log("Portals: " + portal.length + ", Time: " + (tim_end-tim_start) + "ms");
     });
 }
