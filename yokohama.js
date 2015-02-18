@@ -5826,10 +5826,3 @@ var portals = [
 {"area":"横浜市鶴見区","name":"東京駅一番街キャラクターロッカー","image":"http://lh6.ggpht.com/fO8CEe9p1Ar5_gCepHXd7VsWhd3IJ3agbwbq8QGm3mxKTzQ6urokSaXyjbjQRSdmPBraNB8ZzTNXTP7m9PlB","lat":35.681646,"lon":139.76894},
 {"area":"横浜市鶴見区","name":"汐留サモトラケのニケ","image":"http://lh3.ggpht.com/L5eUWTQctq9u06hTPWqe2kXIVRTygwKq0yP6jLasUv79gPgkE-dD8j5XRhYv6z4Zl-_UGjQ8uVCGp042sH9m","lat":35.665014,"lon":139.760903},
 ];
-
-
-var naka_ward = portals.filter(function(portal){
-  return portal.area=="横浜市中区";
-});
-
-alert(naka_ward.length);
