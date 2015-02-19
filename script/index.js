@@ -5,6 +5,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var markers = [];
+  var markerCluster;
   var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
     google.maps.event.addListener(map, 'idle', function(){
       var tim_start = Date.now();
