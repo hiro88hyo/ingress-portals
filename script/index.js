@@ -42,6 +42,7 @@ function initialize() {
         var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
         markers.push(marker);
       });
+      var markerCluster = new MarkerClusterer(map, markers);
       
       var tim_end = Date.now();
       console.log("Portals: " + filterd_portals.length + ", Time: " + (tim_end-tim_start) + "ms");
