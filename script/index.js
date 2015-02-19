@@ -48,7 +48,7 @@ function initialize() {
               openedInfoWindow = null;
             }
             //_infoWindow.setContent(_infoWindow.getContent().replace(/<img no_load_src=/gi, '<img src=')); // lazy img loading
-            _infoWindow.open(googleMap, _marker);
+            _infoWindow.open(map, _marker);
             openedInfoWindow = _infoWindow; };
         }(marker, infoWindow));
         markers.push(marker);
