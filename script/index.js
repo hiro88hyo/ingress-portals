@@ -39,6 +39,14 @@ function initialize() {
 
       filterd_portals.forEach(function(portal){
         var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
+        var infoWindow = new google.maps.InfoWindow({ content: "<div>"+portal.name+"</div>", disableAutoPan: false, maxWidth: 640, noSupress: true });
+        google.maps.event.addListener(marker, 'click', function(_marker, _infoWindow) { // closure
+          return function(event) {
+            closeInfoWindow();
+            //_infoWindow.setContent(_infoWindow.getContent().replace(/<img no_load_src=/gi, '<img src=')); // lazy img loading
+            _infoWindow.open(googleMap, _marker);
+            openedInfoWindow = _infoWindow; };
+        }(marker, infoWindow));
         markers.push(marker);
       });
       markerCluster.clearMarkers();
