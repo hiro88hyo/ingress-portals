@@ -21,9 +21,9 @@ function initialize() {
       markers.forEach(function(marker){
         marker.setMap(null);
       });
-      markers = [];
       markerCluster = new MarkerClusterer(map);
       markerCluster.clearMarkers();
+      markers = [];
 
       var filterd_portals = portals.filter(function(portal){
         return (portal.lat >= minLat && portal.lat <= maxLat
