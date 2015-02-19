@@ -42,7 +42,7 @@ function initialize() {
         var content = "";
         content += "<div>"+portal.name+"</div>";
         content += "<a href='https://www.ingress.com/intel?pll=" + portal.lat + "," + portal.lon + "' target=_blank>";
-        content += "intel...</a";
+        content += "intel...</a>";
         var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
         var infoWindow = new google.maps.InfoWindow({ content: content, disableAutoPan: false, maxWidth: 640, noSupress: true });
         google.maps.event.addListener(marker, 'click', function(_marker, _infoWindow) { // closure
