@@ -5,6 +5,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var markers = [];
+  var openedInfoWindow;
   var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
     google.maps.event.addListener(map, 'idle', function(){
       var tim_start = Date.now();
@@ -42,7 +43,10 @@ function initialize() {
         var infoWindow = new google.maps.InfoWindow({ content: "<div>"+portal.name+"</div>", disableAutoPan: false, maxWidth: 640, noSupress: true });
         google.maps.event.addListener(marker, 'click', function(_marker, _infoWindow) { // closure
           return function(event) {
-            closeInfoWindow();
+            if (openedInfoWindow) { // !!! global
+              openedInfoWindow.close();
+              openedInfoWindow = null;
+            }
             //_infoWindow.setContent(_infoWindow.getContent().replace(/<img no_load_src=/gi, '<img src=')); // lazy img loading
             _infoWindow.open(googleMap, _marker);
             openedInfoWindow = _infoWindow; };
