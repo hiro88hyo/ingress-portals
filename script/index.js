@@ -5,7 +5,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var markers = [];
-  var markerCluster;
+  var markerCluster = new MarkerClusterer(map, markers);
   var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
     google.maps.event.addListener(map, 'idle', function(){
       var tim_start = Date.now();
@@ -22,8 +22,6 @@ function initialize() {
       markers.forEach(function(marker){
         marker.setMap(null);
       });
-      markerCluster = new MarkerClusterer(map);
-      markerCluster.clearMarkers();
       markers = [];
 
       var filterd_portals = portals.filter(function(portal){
@@ -44,7 +42,8 @@ function initialize() {
         var marker = new google.maps.Marker({ position: new google.maps.LatLng(portal.lat, portal.lon), map: map, title: portal.name, icon: iconOpt, zIndex: 10 });
         markers.push(marker);
       });
-      var markerCluster = new MarkerClusterer(map, markers);
+      markerCluster.clearMarkers();
+      markerCluster.addMarkers(markers);
       
       var tim_end = Date.now();
       console.log("Portals: " + filterd_portals.length + ", Time: " + (tim_end-tim_start) + "ms");
