@@ -7,15 +7,30 @@
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map_canvas { height: 100% }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 10%;
+        margin-left: 0px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
     </style>
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAwX9TvGtOLofk86UTZmiaQMT-w5Oe5Akw&sensor=true">
     </script>
     <script src="script/markerclusterer.js"></script>
     <script src="script/yokohama.js"></script>
+    <script src="script/attack.json"></script>
     <script src="script/index.js"></script>
   </head>
   <body onload="initialize()">
+    <div id="panel">
+      <button onclick="toggleHeatmap();">Heatmap</button>
+      <button onclick="toggleCluster();">Cluster</button>
+    </div>
     <div id="map_canvas" style="width:100%; height:100%"></div>
   </body>
 </html>
